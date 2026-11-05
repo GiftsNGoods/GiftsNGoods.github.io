@@ -5,14 +5,24 @@
 
     <body>
         <h1>Create Account</h1>
-
+        <form id="createAccountForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for=""password">Password:</label>
+        <input type="password"  id=""password" name="password" required>
+        
         <label for="accountType">Account type</label>
 
-        <select id="accountType">
-            <option>Select type</option>
+        <select id="accountType"> name="accountType" required>
+            <option value="" disabled selected>Select type</option>
             <option>User</option>
             <option>Donator</option>
             <option>Organization</option>
         </select>
+        <button type="submit">Create Account</button>
+        </form>
+        <script>
+            
+        </script>
     </body>
 </html>
