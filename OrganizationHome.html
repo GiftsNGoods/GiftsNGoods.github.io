@@ -7,7 +7,7 @@
 
 <h1>Gifts & Goods</h1>
  <nav>
-   <button type="button">Edit</button>
+   <button type="button" id="editButton">Edit</button>
    <a href="ContactUs.html">Contact Us</a>
    <button type="button">Account</button>
  </nav>
@@ -127,25 +127,60 @@
     <th>Item</th>
     <th>Stock Status</th>
   </tr>
+  
   <tr>
     <td>Canned Food</td>
-    <td>In Stock</td>
+    <td>
+      <select class="stockDropdown" disabled>
+        <option selected>In Stock</option>
+        <option>Low Stock</option>
+        <option>No Stock</option>
+      </select>
+    </td>
   </tr>
+  
   <tr>
     <td>Cereals</td>
-    <td>In Stock</td>
+    <td>
+      <select class="stockDropdown" disabled>
+        <option selected>In Stock</option>
+        <option>Low Stock</option>
+        <option>No Stock</option>
+      </select>
+    </td>
   </tr>
+  
   <tr>
     <td>Winter Clothes</td>
-    <td>Low Stock</td>
+    <td>
+      <select class="stockDropdown" disabled>
+        <option>In Stock</option>
+        <option selected>Low Stock</option>
+        <option>No Stock</option>
+      </select>
+    </td>
   </tr>
+  
   <tr>
     <td>Soup</td>
-    <td>Low Stock</td>
+    <td>
+      <select class="stockDropdown" disabled>
+        <option>In Stock</option>
+        <option selected>Low Stock</option>
+        <option>No Stock</option>
+      </select>
+    </td>
   </tr>
+  
   <tr>
     <td>Pasta</td>
-    <td>No Stock</td>
+    <td>
+      <select class="stockDropdown" disabled>
+        <option>In Stock</option>
+        <option>Low Stock</option>
+        <option selected>No Stock</option>
+      </select>
+    </td>
   </tr>
 </table>
 
@@ -177,6 +212,29 @@
     <td>Not Needed</td>
   </tr>
 </table>
+
+
+<script>
+  const editButton = document.getElementById("editButton");
+  const dropdowns = document.querySelectorAll(".stockDropdown");
+
+  editButton.addEventListener("click", function() {
+    if (editButton.textContent == "Edit") {
+      dropdowns.forEach(function(dropdown) {
+        dropdown.disabled = false;
+      });
+
+      editButton.textContent = "Save Changes";
+    } else {
+      dropdowns.forEach(function(dropdown) {
+        dropdown.disabled = true;
+      });
+
+      editButton.textContent = "Edit";
+      alert("Stock changes saved!");
+    }
+  });
+</script>
   
 </body> 
 </html>
