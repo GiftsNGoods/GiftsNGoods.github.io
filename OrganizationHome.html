@@ -193,30 +193,60 @@
   </tr>
   <tr>
     <td>Pasta</td>
-    <td>Really Needed</td>
+    <td>
+      <select class="neededDropdown" disabled>
+        <option selected>Really Needed</option>
+        <option>Needed</option>
+        <option>Not Needed</option>
+      </select>
+    </td>
   </tr>
   <tr>
     <td>Soup</td>
-    <td>Needed</td>
+    <td>
+      <select class="neededDropdown" disabled>
+        <option>Really Needed</option>
+        <option selected>Needed</option>
+        <option>Not Needed</option>
+      </select>
+    </td>
   </tr>
   <tr>
     <td>Winter Clothes</td>
-    <td>Needed</td>
+    <td>
+      <select class="neededDropdown" disabled>
+        <option>Really Needed</option>
+        <option selected>Needed</option>
+        <option>Not Needed</option>
+      </select>
+    </td>
   </tr>
   <tr>
     <td>Cereals</td>
-    <td>Not Needed</td>
+    <td>
+      <select class="neededDropdown" disabled>
+        <option>Really Needed</option>
+        <option>Needed</option>
+        <option selected>Not Needed</option>
+      </select>
+    </td>
   </tr>
   <tr>
     <td>Canned Food</td>
-    <td>Not Needed</td>
+    <td>
+      <select class="neededDropdown" disabled>
+        <option>Really Needed</option>
+        <option>Needed</option>
+        <option selected>Not Needed</option>
+      </select>
+    </td>
   </tr>
 </table>
 
 
 <script>
   const editButton = document.getElementById("editButton");
-  const dropdowns = document.querySelectorAll(".stockDropdown");
+  const dropdowns = document.querySelectorAll(".stockDropdown, .neededDropdown");
 
   editButton.addEventListener("click", function() {
     if (editButton.textContent == "Edit") {
