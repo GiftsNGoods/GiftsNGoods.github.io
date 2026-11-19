@@ -5,6 +5,16 @@
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+.header .search {
+  float: center;
+}
+.header input[type=text] {
+  padding: 6px;
+  margin-top: 15px;
+  margin-left: 8px;
+  font-size: 17px;
+  border: none;
+}
 .body {
  	display: grid;
   	grid-template-columns: 2fr 1fr;
@@ -20,23 +30,37 @@
 <body>
 <h1 style="text-align: center;">Gifts & Goods</h1>
 
+/* The top bar of the websit */
 <div class = "header">
+
+    /* The search bar */
     <div style = "background-color: rgb(188, 188, 188);">
-        <h3 style="text-align: center;">Search</h3>
+        <div class="search">
+      		<input type="text" placeholder="Search.." name="search">
+  		</div>
     </div>
+
+    /* The button to go to the contact us page */
     <div style = "background-color: rgb(188, 188, 188);">
         <a href="https://giftsngoods.github.io/ContactUs"><h3 style="text-align: center;">Contact us</h3></a>
     </div>
+
+    /* The button to go to the settings page */
     <div style = "background-color: rgb(188, 188, 188);">
         <a href="https://giftsngoods.github.io/Settings"><h3 style="text-align: center;">Account</h3></a>
     </div>
 </div>
 
+/* The body of the website */
 <div class = "body">
+
+    /* The map */
     <div style = "background-color: rgb(65, 67, 67);">
         <h3 style="text-align: center;">Map</h3>
         <img src="rochester_map.png" alt="Map of Rochester" usemap="#rochestermap">
     </div>
+
+    /* The info section */
     <div style = "background-color: rgb(65, 67, 67);">
         <h3 style="text-align: center;">Info</h3>
     </div>
