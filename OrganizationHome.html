@@ -22,12 +22,12 @@
   <tr>
     <td>Monday</td>
     <td><input type="time" name="mondayOpen"></td>
-    <td><input type="time" name="mondayClose></td>
+    <td><input type="time" name="mondayClose"></td>
   </tr>
   <tr>
     <td>Tuesday</td>
     <td><input type="time" name="tuesdayOpen"></td>
-    <td><input type="time" name="tuesdayClose></td>
+    <td><input type="time" name="tuesdayClose"></td>
      </tr>
   <tr>
     <td>Wednesday</td>
@@ -59,10 +59,10 @@
 
 <script>
     document.getElementById("saveHours").addEventListener("click", function() {
-  const inputs = document.quereySelectorAll('input[type="time"]');
+  const inputs = document.querySelectorAll('input[type="time"]');
   const hours = {};
 
-  inputs.forEacg(function(input) {
+  inputs.forEach(function(input) {
       hours[input.name] = input.value;
   });
 
