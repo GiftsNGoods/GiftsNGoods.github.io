@@ -1,32 +1,60 @@
 <html>
 <body>
+<div style="text-align: center;">
+	<h1 style="text-align: center;">Gifts & Goods</h1>
+	<br>
+	<p> Login: </p>
+	 <form id="logInForm">
+		<label for="username">Username:</label>
+		<input type="text" id="username" required>
+    	<br>
+    	<br>
 
-<h1 style="text-align: center;">Gifts & Goods</h1>
-<br>
-<p style="text-align: center;"> Login: </p>
+		<label for="password">Password:</label>
+		<input type="password"  id="password" required>
+		<br>
+    	<br>
+   
+    	<label for="accountType">Account type:</label>
+    	<select id="accountType"> name="accountType" required>
+            <option value="" disabled selected>Select type</option>
+            <option>User</option>
+            <option>Donator</option>
+            <option>Organization</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <br>
 
+        <button type="submit">Log In</button>
+        </form>
+  
+        <script>
+        	document.getElementById("logInForm").addEventListener("submit", function(event) {
+            	event.preventDefault();
 
+            	const accountType = document.getElementById("accountType").value;
 
+            	if (accountType == "User") {
+                	window.location.href = "UserHome.html";
+            	} else if (accountType == "Donator") {
+                	window.location.href = "DonatorHome.html";
+            	} else if (accountType == "Organization") {
+                	window.location.href = "OrganizationHome.html";
+            	}
+        	});
+       </script>
 
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<a style="text-align: center;" href="https://giftsngoods.github.io/CreateAccount">
-  	<button style="text-align: center;">Create Account</button>
-</a>
-
-
-
-
-
-
-
-
+       	<br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+         <a href="https://giftsngoods.github.io/CreateAccount">
+  			<button>Create Account</button>
+		</a>
+</div>
 <body>
 </html>
