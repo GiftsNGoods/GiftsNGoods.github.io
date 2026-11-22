@@ -7,9 +7,9 @@
 
 <h1>Gifts & Goods</h1>
  <nav>
-   <button type="button">Edit</button>
+   <button type="button" id="editButton">Edit</button>
    <a href="ContactUs.html">Contact Us</a>
-   <button type="button">Account</button>
+   <a href="Settings.html">Account</a>
  </nav>
   <h2>Organization Hours</h2>
 
@@ -127,25 +127,60 @@
     <th>Item</th>
     <th>Stock Status</th>
   </tr>
+  
   <tr>
     <td>Canned Food</td>
-    <td>In Stock</td>
+    <td>
+      <select class="stockDropdown" disabled>
+        <option selected>In Stock</option>
+        <option>Low Stock</option>
+        <option>No Stock</option>
+      </select>
+    </td>
   </tr>
+  
   <tr>
     <td>Cereals</td>
-    <td>In Stock</td>
+    <td>
+      <select class="stockDropdown" disabled>
+        <option selected>In Stock</option>
+        <option>Low Stock</option>
+        <option>No Stock</option>
+      </select>
+    </td>
   </tr>
+  
   <tr>
     <td>Winter Clothes</td>
-    <td>Low Stock</td>
+    <td>
+      <select class="stockDropdown" disabled>
+        <option>In Stock</option>
+        <option selected>Low Stock</option>
+        <option>No Stock</option>
+      </select>
+    </td>
   </tr>
+  
   <tr>
     <td>Soup</td>
-    <td>Low Stock</td>
+    <td>
+      <select class="stockDropdown" disabled>
+        <option>In Stock</option>
+        <option selected>Low Stock</option>
+        <option>No Stock</option>
+      </select>
+    </td>
   </tr>
+  
   <tr>
     <td>Pasta</td>
-    <td>No Stock</td>
+    <td>
+      <select class="stockDropdown" disabled>
+        <option>In Stock</option>
+        <option>Low Stock</option>
+        <option selected>No Stock</option>
+      </select>
+    </td>
   </tr>
 </table>
 
@@ -158,25 +193,78 @@
   </tr>
   <tr>
     <td>Pasta</td>
-    <td>Really Needed</td>
+    <td>
+      <select class="neededDropdown" disabled>
+        <option selected>Really Needed</option>
+        <option>Needed</option>
+        <option>Not Needed</option>
+      </select>
+    </td>
   </tr>
   <tr>
     <td>Soup</td>
-    <td>Needed</td>
+    <td>
+      <select class="neededDropdown" disabled>
+        <option>Really Needed</option>
+        <option selected>Needed</option>
+        <option>Not Needed</option>
+      </select>
+    </td>
   </tr>
   <tr>
     <td>Winter Clothes</td>
-    <td>Needed</td>
+    <td>
+      <select class="neededDropdown" disabled>
+        <option>Really Needed</option>
+        <option selected>Needed</option>
+        <option>Not Needed</option>
+      </select>
+    </td>
   </tr>
   <tr>
     <td>Cereals</td>
-    <td>Not Needed</td>
+    <td>
+      <select class="neededDropdown" disabled>
+        <option>Really Needed</option>
+        <option>Needed</option>
+        <option selected>Not Needed</option>
+      </select>
+    </td>
   </tr>
   <tr>
     <td>Canned Food</td>
-    <td>Not Needed</td>
+    <td>
+      <select class="neededDropdown" disabled>
+        <option>Really Needed</option>
+        <option>Needed</option>
+        <option selected>Not Needed</option>
+      </select>
+    </td>
   </tr>
 </table>
+
+
+<script>
+  const editButton = document.getElementById("editButton");
+  const dropdowns = document.querySelectorAll(".stockDropdown, .neededDropdown");
+
+  editButton.addEventListener("click", function() {
+    if (editButton.textContent == "Edit") {
+      dropdowns.forEach(function(dropdown) {
+        dropdown.disabled = false;
+      });
+
+      editButton.textContent = "Save Changes";
+    } else {
+      dropdowns.forEach(function(dropdown) {
+        dropdown.disabled = true;
+      });
+
+      editButton.textContent = "Edit";
+      alert("Stock changes saved!");
+    }
+  });
+</script>
   
 </body> 
 </html>
